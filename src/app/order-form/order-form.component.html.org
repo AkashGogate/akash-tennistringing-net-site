@@ -1,0 +1,43 @@
+<div class="container">
+  <div>
+  <legend>Racket Order Form</legend>
+  </div>
+  <form #orderForm="ngForm" (ngSubmit)="submitOrder(orderForm.value)">
+    <div class="form-group has-feedback">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required ngModel>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" required ngModel>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="tel" class="form-control" id="phone" name="phone" required ngModel>
+    </div>
+    <div class="form-group">
+      <label for="racketType">Racket Type:</label>
+      <input type="text" class="form-control" id="racketType" name="racketType" required ngModel>
+    </div>
+    <div class="form-group">
+      <label for="stringType">String Type:</label>
+      <select class="form-control" id="stringType" name="stringType" required ngModel>
+        <option value="Hyper-G">Hyper-G</option>
+        <option value="RPM Blast">RPM Blast</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="tension">Tension:</label>
+      <input type="number" class="form-control" id="tension" name="tension" required ngModel min="40" max="65">
+    </div>
+    <div class="form-group">
+      <label for="expedited">Expedited:</label>
+      <select class="form-control" id="expedited" name="expedited" required ngModel>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+

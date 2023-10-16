@@ -1,0 +1,134 @@
+
+<style>
+{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 30px;
+}
+
+form {
+  border: 1px solid #333;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+label {
+  width: 100px;
+}
+
+input,
+select,
+textarea {
+  flex: 1;
+  padding: 3px 5px;
+}
+
+.submit-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  width: 100px;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+</style>
+  <br>
+  <br>
+  <br>
+  <br>
+<form #orderForm="ngForm" (ngSubmit)="submitOrder(orderForm.value)">
+  <H1> Racket String Request </H1>
+  <br>
+  <div class="input-group">
+    <label for="fname">Firstname</label>
+    <input
+      id="fname"
+      name="fname"
+      placeholder="Enter firstname"
+      required="required"
+    />
+  </div>
+  <div class="input-group">
+    <label for="lname">Lastname</label>
+    <input
+      id="lname"
+      name="lname"
+      placeholder="Enter lastname"
+      required="required"
+    />
+  </div>
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      placeholder="Enter your email"
+    />
+  </div>
+  <div class="input-group">
+    <label for="phoneNumber">Phone Number</label>
+    <input
+      id="phoneNumber"
+      type="phoneNumber"
+      name="phoneNumber"
+      placeholder="(846) 555-1212"
+    />
+  </div>
+  <div class="input-group">
+    <label for="RacketBrand">Racket Brand</label>
+    <input
+      id="RackerBrand"
+      type="RackerBrand"
+      name="RackerBrand"
+      placeholder="Enter Racket Brand"
+    />
+  </div>
+  <div class="input-group">
+    <label for="RacketModel">Racket Model Name</label>
+    <input 
+      id="RackerModel"
+      type="RackerModel"
+      name="RackerModel"
+      placeholder="Enter Racket Model Name"
+      required
+    />
+  </div>
+  <div class="input-group">
+    <label>String Type</label>
+    <select name="String Type" id="stringType" required="required">
+      <option value="RPM Blast">RPM Blast</option>
+      <option value="Hyper-G">Hyper-G</option>
+    </select>
+  </div>
+  <div class="input-group">
+    <label for="message">Any message?</label>
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Optional"
+    ></textarea>
+  </div>
+  <div class="submit-group">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+

@@ -1,0 +1,118 @@
+
+
+<style>
+{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 30px;
+}
+
+form {
+  border: 1px solid #333;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+label {
+  width: 100px;
+}
+
+input,
+select,
+textarea {
+  flex: 1;
+  padding: 3px 5px;
+}
+
+.submit-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  width: 100px;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+</style>
+  <br>
+  <br>
+  <br>
+  <br>
+ <div class="container" > <!-- style="background-image:url('../../assets/images/tennisbg3.jpeg');"> -->
+  <div>
+  <H1 style="text-align:center; color:green;">Racket Order Form</H1>
+  </div>
+  <form #orderForm="ngForm" (ngSubmit)="submitOrder(orderForm.value)">
+    <div class="form-group has-feedback">
+      <label for="name" >Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="orderForm.name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" ng-required="true" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone :</label>
+      <input type="tel" class="form-control" id="phone" name="phone" required ngModel>
+    </div>
+    <div class="form-group">
+      <label for="racketType">Racket Type:</label>
+      <input type="text" class="form-control" id="racketType" name="racketType" required ngModel>
+    </div>
+    <div class="form-group">
+      <label for="racketModel">Racket Model:</label>
+      <input type="text" class="form-control" id="racketModel" name="racketModel" required ngModel>
+    </div>
+    <div class="form-group">
+      <label for="stringType">String Type:</label>
+      <select class="form-control" id="stringType" name="stringType" required ngModel>
+        <option value="Hyper-G">Hyper-G 17</option>
+        <option value="Hyper-G">Hyper-G 19</option>
+        <option value="RPM Blast">RPM Blast 16</option>
+        <option value="RPM Blast">RPM Blast 17</option>
+        <option value="Dunlop Synthetic Gut 17">Dunlop Synthetic Gut 17</option>
+        <option value="Luxilon ALU Power 17">Luxilon ALU Power 16</option>
+        <option value="Luxilon ALU Power 16">Luxilon ALU Power 17</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="tension">Tension:</label>
+      <input type="number" class="form-control" id="tension" name="tension" required ngModel min="35" max="65">
+    </div>
+    <div class="form-group">
+      <label for="expedited">Expedited:</label>
+      <select class="form-control" id="expedited" name="expedited" required ngModel>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="stringSupplied">Own String:</label>
+      <select class="form-control" id="stringSupplied" name="stringSupplied" required ngModel>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="submit-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+

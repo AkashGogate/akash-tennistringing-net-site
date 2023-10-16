@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import { SocialAuthService, SocialUser } from 'angularx-social-login';
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  private loggedIn = new BehaviorSubject<boolean>(false);
+  private user: SocialUser;
+
+  constructor(private authService: SocialAuthService) {}
+
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
+
+  get currentUser() {
+    return this.user;
+  }
+
+  signInWithGoogle(): void {
+    this.authService.signIn('google').then(user => {
+      this.user = user;
+      this.loggedIn.next(true);
+    }).catch(error => {
+      console.error('Error during Google login: ', error);
+      this.loggedIn.next(false);
+    });
+  }
+
+  signOut(): void {
+    this.authService.signOut().then(() => {
+      this.loggedIn.next(false);
+    });
+  }
+}
+
